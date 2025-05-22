@@ -1,24 +1,25 @@
-import pixie from "@pixie-cheeks/eslint-config";
-import tseslint from "typescript-eslint";
+import pixie from '@pixie-cheeks/eslint-config';
+import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { files: ["**/*.ts,js,cjs"] },
-  { ignores: ["dist"] },
+  { files: ['**/*.ts,js,cjs'] },
+  { ignores: ['dist'] },
   ...pixie.base,
   {
-    files: ["eslint.config.js", "vite.config.ts"],
+    files: ['eslint.config.js', 'vite.config.ts'],
     rules: {
-      "import-x/no-default-export": "off",
+      'import-x/no-default-export': 'off',
     },
   },
   {
-    files: ["src/**/*"],
+    files: ['src/**/*'],
     rules: {
-      "n/no-unsupported-features/node-builtins": "off",
+      'n/no-unsupported-features/node-builtins': 'off',
+      'no-console': 'off',
     },
   },
   {
-    files: ["**/*.ts"],
+    files: ['**/*.ts'],
     extends: [
       tseslint.configs.strictTypeChecked,
       tseslint.configs.stylisticTypeChecked,
@@ -30,8 +31,8 @@ export default tseslint.config(
       },
     },
     rules: {
-      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
-      "@typescript-eslint/explicit-function-return-type": "error",
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+      '@typescript-eslint/explicit-function-return-type': 'error',
     },
   },
   pixie.prettier,
