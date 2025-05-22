@@ -8,7 +8,10 @@
     "node": ">=21.2.0"
   },
   "scripts": {
+    "runTs": "tsx",
     "lint": "eslint",
+    "lint:types": "tsc -b",
+    "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,8 +21,43 @@
   "devDependencies": {
     "@pixie-cheeks/eslint-config": "13.0.0",
     "@types/node": "22.15.21",
+    "cspell": "9.0.2",
     "eslint": "9.27.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.0.0",
+    "prettier": "3.5.3",
+    "tsx": "4.19.4",
     "typescript": "5.8.3",
     "typescript-eslint": "8.32.1"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "cspell": {
+    "version": "0.2",
+    "language": "en,en-GB,lorem",
+    "allowCompoundWords": true,
+    "dictionaries": [
+      "html"
+    ],
+    "words": [
+      "awmottaz",
+      "esbuild",
+      "unrs"
+    ],
+    "ignorePaths": [
+      "dist",
+      "node_modules",
+      "pnpm-lock.yaml"
+    ]
+  },
+  "lint-staged": {
+    "*": [
+      "cspell --no-must-find-files",
+      "prettier --write --ignore-unknown"
+    ],
+    "*.js": [
+      "eslint --max-warnings 0"
+    ]
   }
 }

@@ -1,0 +1,4 @@
+echo "running eslint"
+eslint
+echo "running tsc -b"
+tsc -b
