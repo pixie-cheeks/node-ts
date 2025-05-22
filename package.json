@@ -1,0 +1,25 @@
+{
+  "name": "node-ts",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=21.2.0"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "devDependencies": {
+    "@pixie-cheeks/eslint-config": "13.0.0",
+    "@types/node": "22.15.21",
+    "eslint": "9.27.0",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.32.1"
+  }
+}
